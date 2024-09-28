@@ -1,0 +1,28 @@
+optionsFile: null
+printHelp: false
+# WebGoat libs
+classPath :
+  #  - WebGoat/BOOT-INF/lib
+  - /Users/yuntsy/My/Projects/Java/Tai-e_Test/build/classes/java/main
+# appClass
+appClassPath: [/Users/yuntsy/My/Projects/Java/Tai-e_Test/build/classes/java/main]
+mainClass: org.example.Main
+inputClasses: []
+javaVersion: 17
+prependJVM: true
+allowPhantom: false
+worldBuilderClass: pascal.taie.frontend.soot.SootWorldBuilder
+outputDir: output
+preBuildIR: false
+worldCacheMode: false
+scope: APP
+nativeModel: true
+planFile: null
+analyses:
+  ir-dumper: ""
+  cg: ""
+  cfg: ""
+  pta: "plugins:[pascal.taie.analysis.pta.plugin.CustomEntryPointPlugin]"
+onlyGenPlan: false
+keepResult:
+  - $KEEP-ALL
