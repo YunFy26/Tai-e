@@ -1,5 +1,6 @@
 package pascal.taie.analysis.pta.plugin;
 
+import pascal.taie.analysis.pta.core.cs.element.CSMethod;
 import pascal.taie.analysis.pta.core.heap.Descriptor;
 import pascal.taie.analysis.pta.core.heap.HeapModel;
 import pascal.taie.analysis.pta.core.heap.Obj;
@@ -36,7 +37,7 @@ public class CustomEntryPointPlugin implements Plugin {
 
     @Override
     public void onStart() {
-        hierarchy.applicationClasses().forEach(System.out::println);
+//        hierarchy.applicationClasses().forEach(System.out::println);
 //        JClass clz = hierarchy.getClass("org.example.ProcessCall");
 //        assert clz != null;
 //
@@ -46,6 +47,12 @@ public class CustomEntryPointPlugin implements Plugin {
 //        solver.addEntryPoint(new EntryPoint(callMethod, EmptyParamProvider.get()));
 
     }
+
+    @Override
+    public void onNewCSMethod(CSMethod csMethod) {
+        System.out.println(csMethod.getMethod().getName());
+    }
+
 
     @Override
     public void onFinish() {
